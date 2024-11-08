@@ -61,11 +61,7 @@ class _Dropzone(object):
         else:
             redirect_js = ''
 
-        #if not current_app.config['DROPZONE_ALLOWED_FILE_CUSTOM']:
-        #    allowed_type = setup.allowed_file_extensions[
-        #        current_app.config['DROPZONE_ALLOWED_FILE_TYPE']]
-        #else:
-        #    allowed_type = current_app.config['DROPZONE_ALLOWED_FILE_TYPE']
+
             allowed_type = setup.allowed_file_extensions
 
         max_files = current_app.config['DROPZONE_MAX_FILES']
@@ -263,9 +259,6 @@ Dropzone.options.myDropzone = {
         allowed_file_type = kwargs.get('allowed_file_type', current_app.config['DROPZONE_ALLOWED_FILE_TYPE'])
         allowed_file_custom = kwargs.get('allowed_file_custom', current_app.config['DROPZONE_ALLOWED_FILE_CUSTOM'])
 
-        #if allowed_file_custom:
-        #    allowed_type = allowed_file_type
-        #else:
         allowed_type = setup.allowed_file_extensions
 
         default_message = kwargs.get('default_message', current_app.config['DROPZONE_DEFAULT_MESSAGE'])
