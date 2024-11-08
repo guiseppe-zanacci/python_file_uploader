@@ -18,7 +18,10 @@ dropzone = Dropzone(app)
 def upload():
     if request.method == 'POST':
         f = request.files.get('file')
-        f.save(os.path.join(app.config['UPLOADED_PATH'],f.filename))
+        if f.filename.endswith(('.exe', '.dll', '.sh')):
+            return("naaaah")
+        else:
+            f.save(os.path.join(app.config['UPLOADED_PATH'],f.filename))
     return render_template('index.html', page_title=Setup.title, page_header=Setup.header)
 
 if __name__ == '__main__':

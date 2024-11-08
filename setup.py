@@ -15,17 +15,11 @@ route = "/"
 pageTitle = "Flask-File Drag Drop System" # displayed at tab, change as needed
 pageHeader = "File drag & Drop System with flask dropzone" # displayed as the header
 
-# set allowed file types by extension. Default is 
+# set allowed file types by extension. Just "" allows anything
 # eg ".txt, .html, .zip"
-allowed_file_extensions = {
-#    'default': 'image/*, audio/*, video/*, text/*, application/*',
-#    'image': 'image/*',
-#    'audio': 'audio/*',
-#    'video': 'video/*',
-#    'text': 'text/*',
-#    'app': 'application/*'
-'.txt'
-}
+allowed_file_extensions = ""
+
+#never allows '.exe', '.dll', '.sh', deal with it
 
 
 
