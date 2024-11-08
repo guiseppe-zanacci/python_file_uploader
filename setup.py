@@ -18,12 +18,13 @@ pageHeader = "File drag & Drop System with flask dropzone" # displayed as the he
 # set allowed file types by extension. Default is 
 # eg ".txt, .html, .zip"
 allowed_file_extensions = {
-    'default': 'image/*, audio/*, video/*, text/*, application/*',
-    'image': 'image/*',
-    'audio': 'audio/*',
-    'video': 'video/*',
-    'text': 'text/*',
-    'app': 'application/*'
+#    'default': 'image/*, audio/*, video/*, text/*, application/*',
+#    'image': 'image/*',
+#    'audio': 'audio/*',
+#    'video': 'video/*',
+#    'text': 'text/*',
+#    'app': 'application/*'
+'.txt'
 }
 
 

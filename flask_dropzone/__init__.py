@@ -15,16 +15,6 @@ import setup
 
 from .utils import random_filename, get_url  # noqa
 
-#: defined normal file type
-allowed_file_extensions = {
-    'default': 'image/*, audio/*, video/*, text/*, application/*',
-    'image': 'image/*',
-    'audio': 'audio/*',
-    'video': 'video/*',
-    'text': 'text/*',
-    'app': 'application/*'
-}
-
 
 class _Dropzone(object):
 
@@ -395,7 +385,7 @@ class Dropzone(object):
         app.config.setdefault('DROPZONE_MAX_FILE_SIZE', 3)  # MB
         app.config.setdefault('DROPZONE_INPUT_NAME', 'file')
         app.config.setdefault('DROPZONE_ALLOWED_FILE_CUSTOM', True)
-        app.config.setdefault('DROPZONE_ALLOWED_FILE_TYPE', 'default')
+        app.config.setdefault('DROPZONE_ALLOWED_FILE_TYPE', setup.allowed_file_extensions)
         app.config.setdefault('DROPZONE_MAX_FILES', 'null')
         # The timeout to cancel upload request in millisecond, default to 30000 (30 second).
         # Set a large number if you need to upload large file.
