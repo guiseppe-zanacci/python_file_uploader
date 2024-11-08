@@ -72,7 +72,7 @@ class _Dropzone(object):
             redirect_js = ''
 
         if not current_app.config['DROPZONE_ALLOWED_FILE_CUSTOM']:
-            allowed_type = allowed_file_extensions[
+            allowed_type = setup.allowed_file_extensions[
                 current_app.config['DROPZONE_ALLOWED_FILE_TYPE']]
         else:
             allowed_type = current_app.config['DROPZONE_ALLOWED_FILE_TYPE']
@@ -275,7 +275,7 @@ Dropzone.options.myDropzone = {
         if allowed_file_custom:
             allowed_type = allowed_file_type
         else:
-            allowed_type = allowed_file_extensions[allowed_file_type]
+            allowed_type = setup.allowed_file_extensions[allowed_file_type]
 
         default_message = kwargs.get('default_message', current_app.config['DROPZONE_DEFAULT_MESSAGE'])
         invalid_file_type = kwargs.get('invalid_file_type', current_app.config['DROPZONE_INVALID_FILE_TYPE'])
@@ -394,7 +394,7 @@ class Dropzone(object):
         app.config.setdefault('DROPZONE_SERVE_LOCAL', False)
         app.config.setdefault('DROPZONE_MAX_FILE_SIZE', 3)  # MB
         app.config.setdefault('DROPZONE_INPUT_NAME', 'file')
-        app.config.setdefault('DROPZONE_ALLOWED_FILE_CUSTOM', False)
+        app.config.setdefault('DROPZONE_ALLOWED_FILE_CUSTOM', True)
         app.config.setdefault('DROPZONE_ALLOWED_FILE_TYPE', 'default')
         app.config.setdefault('DROPZONE_MAX_FILES', 'null')
         # The timeout to cancel upload request in millisecond, default to 30000 (30 second).

@@ -1,6 +1,6 @@
 # uncomment where server should run
 serverType = "Local" # has debug=True
-#serverType = "Public" # Has debug=False
+#serverType = "Public" # has debug=False
 
 # port that the server runs on (5000 is default for flask)
 # 80 is default for HTTP, 443 is default for HTTPS. If you want this however, you need nginx or similar
@@ -15,7 +15,16 @@ route = "/"
 pageTitle = "Flask-File Drag Drop System" # displayed at tab, change as needed
 pageHeader = "File drag & Drop System with flask dropzone" # displayed as the header
 
-
+# set allowed file types by extension. Default is 
+# eg ".txt, .html, .zip"
+allowed_file_extensions = {
+    'default': 'image/*, audio/*, video/*, text/*, application/*',
+    'image': 'image/*',
+    'audio': 'audio/*',
+    'video': 'video/*',
+    'text': 'text/*',
+    'app': 'application/*'
+}
 
 
 
