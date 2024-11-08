@@ -11,3 +11,23 @@ port = 5000
 # for someone to find a random route is unlikely
 # must begin with "/"
 route = "/"
+
+pageTitle = "Flask-File Drag Drop System" # displayed at tab, change as needed
+pageHeader = "File drag & Drop System with flask dropzone" # displayed as the header
+
+
+
+
+
+
+
+
+
+
+
+
+# no touch
+class Setup:
+    def __init__(self):
+        self.title = pageTitle
+        self.header = pageHeader

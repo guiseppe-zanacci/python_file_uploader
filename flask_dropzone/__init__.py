@@ -11,6 +11,8 @@ import warnings
 from flask import Blueprint, current_app, url_for, render_template_string
 from markupsafe import Markup
 
+import setup
+
 from .utils import random_filename, get_url  # noqa
 
 #: defined normal file type

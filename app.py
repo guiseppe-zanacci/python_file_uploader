@@ -5,6 +5,7 @@ from flask_dropzone import Dropzone
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 import setup
+Setup = setup.Setup() #heh
 
 app = Flask(__name__)
 app.config.update(
@@ -18,7 +19,7 @@ def upload():
     if request.method == 'POST':
         f = request.files.get('file')
         f.save(os.path.join(app.config['UPLOADED_PATH'],f.filename))
-    return render_template('index.html')
+    return render_template('index.html', page_title=Setup.title, page_header=Setup.header)
 
 if __name__ == '__main__':
     if setup.serverType == "Local":
