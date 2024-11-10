@@ -22,7 +22,7 @@ dropzone = Dropzone(app)
 def upload():
     if request.method == 'POST':
         f = request.files.get('file')
-        if f.filename.endswith(('.exe', '.dll', '.sh')):
+        if f.filename.endswith(('.exe', '.dll', '.sh', ' ', '.', '. ')) or '.' not in f.filename:
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             content_hash = hashlib.sha256(f.read()).hexdigest()
             f.seek(0)
